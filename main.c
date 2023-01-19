@@ -1,11 +1,10 @@
+#include "graph.h"
 #include <stdio.h> 
 #include <stdlib.h> 
-#include <math.h>
 #include <limits.h>
-#include "graph.h"
 #include <ctype.h>
+#include <math.h>
 
-// the main of ex4 
 int main()
 {
     pnode temp = NULL;
@@ -38,5 +37,6 @@ int main()
         }
     }
     deleteGraph_cmd(head);
+    
     return 0;
 }
