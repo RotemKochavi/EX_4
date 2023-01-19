@@ -1,9 +1,9 @@
+#include "graph.h"
 #include <stdio.h> 
 #include <stdlib.h> 
 #include <string.h>
 #include <ctype.h>
 #include <limits.h>
-#include "graph.h"
 
 /*
 function that build the graph 
@@ -74,7 +74,9 @@ void printGraph_cmd(pnode head)
     
 }
 
-/* function that return pointer node by him id*/
+/*
+    function that return pointer node by him id
+*/
 
 pnode getNode(int id_node, pnode *head) // get the indexe of the node
 {
@@ -93,7 +95,9 @@ pnode getNode(int id_node, pnode *head) // get the indexe of the node
     return NULL;
 }
 
-/*function that delete node from graph*/
+/*
+    function that delete node from graph
+*/
 void delete_node_cmd(pnode *head){ 
     int inf;
 	scanf("%d", &inf);
@@ -133,7 +137,9 @@ void delete_node_cmd(pnode *head){
 	}
 }
 
-/*function that insert node to graph*/
+/*
+    function that insert node to graph
+*/
 void insert_node_cmd(pnode *head)
 {
     int inf = -1;
@@ -165,9 +171,11 @@ void insert_node_cmd(pnode *head)
     int dest = -1;
     pedge *e_new = &(p_get->edges);
     int d = scanf("%d", &dest);
-    while (d != 0 && d != EOF){
+    while (d != 0 && d != EOF)
+    {
         pnode v_d = getNode(dest,head);
-        if (v_d== NULL){
+        if (v_d== NULL)
+	{
             v_d = (pnode)malloc(sizeof(node));
             if (v_d == NULL)
             {
