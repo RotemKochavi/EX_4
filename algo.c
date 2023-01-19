@@ -67,7 +67,7 @@ dijkstra_P Small_node(dijkstra_P head)
     dijkstra_P vertex = NULL;
     while (head != NULL)
     {
-        if (!head->infor && head->weight < INT_MAX && (vertex == NULL || vertex->weight < head->weight))
+        if (!head->infor && head->weight < INT_MAX && (vertex->weight < head->weight || vertex == NULL))
         {
             vertex = head;
         }
@@ -100,8 +100,10 @@ int shortsPath_cmd(pnode head, int star, int end)
         x = Small_node(pdijk_1);
     }
     int len = dijkstraP(pdijk_1,end)->weight;
-    if (len == INT_MAX){
-        len = -1;}
+    if (len == INT_MAX)
+    {
+        len = -1;
+    }
     dijkstra_remove(pdijk_1);
     return len;
 }
@@ -120,7 +122,8 @@ void swap(int *array, int x, int y)
     array[x] = array[y];
    array[y] = temp;
 }
-///////////////////////////////////////////////////////////////////
+
+
 void calculation_p(int *array, int len_of_array)
 {
     int w2 = 0;
@@ -139,7 +142,8 @@ void calculation_p(int *array, int len_of_array)
         weight = w2;
     }
 }
-//////////////////////////////////////////////////////////////
+
+
 void permotion(int s, int *arr, int lenOfArray)
 {
     if (s == lenOfArray - 1)
@@ -156,7 +160,7 @@ void permotion(int s, int *arr, int lenOfArray)
         free(temp_arr);
     }
 }
-////////////////////////////////////////////////////////////
+
 void TSP_cmd(pnode head)
 {
     longA = -1;
