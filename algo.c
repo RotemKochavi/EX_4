@@ -9,7 +9,9 @@ pnode mygraph;
 int weight;
 
 
-// shortsPath
+/*
+   function shortsPath
+*/
 dijkstra_P dijkstra_construction(pnode one, int makor)
 {
     dijkstra_P head = NULL;
@@ -38,7 +40,9 @@ dijkstra_P dijkstra_construction(pnode one, int makor)
     }
     return head;
 }
-// remove
+/*
+   function remove
+*/
 void dijkstra_remove(dijkstra_P dijkstra)
 {
     while (dijkstra != NULL)
@@ -79,7 +83,9 @@ dijkstra_P Small_node(dijkstra_P head)
     }
     return vertex;
 }
-// shortsPath - function
+/*
+    function shortsPath cmd
+*/
 int shortsPath_cmd(pnode head, int star, int end)
 {
    dijkstra_P pdijk_1 = dijkstra_construction(head, star);
@@ -108,7 +114,9 @@ int shortsPath_cmd(pnode head, int star, int end)
     return len;
 }
 
-// TSP - function
+/* 
+    function deep copy
+*/
 void cpy_deep(int *f, int *t, int len_of_array)
 {
     for (int i = 0; i < len_of_array; ++i)
