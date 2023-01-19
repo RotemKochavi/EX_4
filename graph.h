@@ -17,7 +17,7 @@ typedef struct GRAPH_NODE_
     int node_num;
     pedge edges;
     struct GRAPH_NODE_ *next;
-}node, *pnode;
+} node, *pnode;
 
 typedef struct Dijkstra {
     pnode node;
@@ -26,15 +26,14 @@ typedef struct Dijkstra {
     struct Dijkstra *next;
 } dijkstra, *dijkstra_P;
 
-
+void TSP_cmd(pnode head);
+void printGraph_cmd(pnode head); 
 void build_graph_cmd(pnode *head);
 void insert_node_cmd(pnode *head);
 void delete_node_cmd(pnode *head);
-void printGraph_cmd(pnode head); //for self debug
 void deleteGraph_cmd(pnode* head);
-int shortsPath_cmd(pnode head, int src, int dest);
-void TSP_cmd(pnode head);
 void add_edge(pnode *head ,int i);
+int shortsPath_cmd(pnode head, int src, int dest);
 
 
 #endif
