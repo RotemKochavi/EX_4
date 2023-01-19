@@ -71,7 +71,7 @@ dijkstra_P Small_node(dijkstra_P head)
     dijkstra_P vertex = NULL;
     while (head != NULL)
     {
-        if (!head->infor && head->weight < INT_MAX && (vertex->weight < head->weight || vertex == NULL))
+        if (!head->infor && head->weight < INT_MAX && (vertex == NULL || vertex->weight < head->weight))
         {
             vertex = head;
         }
